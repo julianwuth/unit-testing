@@ -26,3 +26,10 @@ test_that("sd not computed if any column has one unique value only", {
   df <- data.frame(c(1, 2), c(1, 1))
   expect_error(col_summary(df, "sd"))
 })
+
+
+# Snapshot testing for plots
+test_that("summary plot works", {
+  vec <- c("a" = 1, "b" = 4, "c" = 6)
+  vdiffr::expect_doppelganger("Summary plot", plot_summary(vec))
+})
