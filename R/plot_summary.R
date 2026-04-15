@@ -11,7 +11,8 @@ plot_summary <- function(vec) {
 
   p <- ggplot2::ggplot(plot_df, ggplot2::aes(x = x, y = y)) +
     ggplot2::geom_col() +
-    ggplot2::labs(x = "Variable", y = "Summary")
+    ggplot2::labs(x = "Variable", y = "Summary") +
+    ggplot2::theme_bw()
 
   return(p)
 }

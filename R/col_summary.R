@@ -18,7 +18,7 @@ col_summary <-  function(df, fun = c("mean", "sd", "min", "max")) {
   if (summary_fun == "sd") {
     unique_elements <- apply(df, 2, get_unique)
 
-    if(any(unique_elements) < 2)
+    if(any(unique_elements < 2))
       stop("SD cannot be computed because one column has less than two unique elements.")
   }
 

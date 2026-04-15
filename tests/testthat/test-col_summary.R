@@ -9,7 +9,15 @@ test_that("col min works", {
 })
 
 # TODO Insert test for col max & sd here
+test_that("col max works", {
+  df <- data.frame(a = 1:3, b = 4:6, c = 6:8)
+  expect_equal(col_summary(df, "max"), c("a" = 3, "b" = 6, "c" = 8))
+})
 
+test_that("col sd works", {
+  df <- data.frame(a = 1:3, b = 4:6, c = 6:8)
+  expect_equal(col_summary(df, "sd"), c("a" = 1, "b" = 1, "c" = 1))
+})
 
 # Tests for errors
 test_that("invalid df input errors", {
